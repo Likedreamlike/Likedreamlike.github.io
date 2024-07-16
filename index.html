@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>港中深求生指南</title>
+  <title>港中深求生手册</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css"> <!-- 右侧目录 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> <!-- 目录折叠的图标 -->
 </head>
 <body>
   <div id="app"></div>
@@ -18,19 +20,57 @@
       repo: '',
       loadSidebar: true,
       subMaxLevel: 2,
-      disqus: 'shortname',
+      //搜索
       search: {
         paths: 'auto',
         placeholder: '🔍 搜索',
-        noData: '😒 找不到结果',
+        noData: '找不到结果',
         depth: 6,
-      }
+      },
+
+      //文末下一页
+      pagination: {
+        previousText: '上一页',
+        nextText: '下一页',
+        crossChapter: true,
+      },
+
+      //右侧目录设置
+      toc: {
+        scope: '.markdown-section',
+        headings: 'h1, h2, h3, h4, h5, h6',
+        title: '目录',
+      }, 
+
+      //左侧折叠设置
+      loadSidebar: true,
+      alias: {
+      '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      subMaxLevel: 2,
+      sidebarDisplayLevel: 0, // set sidebar display level
+
+      //评论区
+      valine:{
+        appId: "02iRs10bAxNDPIedLyufypwR-gzGzoHsz",
+        appKey: "8NNzObEfphzmqkQPFlLLfJwE",
+        // other key in https://valine.js.org/configuration.html
+  },
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!--右侧目录 --> 
+  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+  <!--左侧目录折叠-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- 评论  -->
+  <script src='//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+  <script src="https://unpkg.com/docsify-mango-valine@1.1.1/dist/docsify-mango-valine.min.js"></script>
+  </script>
 </body>
 <style>
     aside.sidebar ul li.active > a {
@@ -40,9 +80,10 @@
       font-size: 18px;
       font-weight: bold
       }
-      aside.sidebar ul li a {
+    aside.sidebar ul li a {
       font-size: 17px;
       }
     
 </style>
 </html>
+
