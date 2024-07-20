@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>港中深求生手册</title>
+  <link rel="shortcut icon" href="https://www.cuhk.edu.cn/themes/custom/cuhk_ui/favicon.ico" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css"> <!-- 右侧目录 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> <!-- 目录折叠的图标 -->
+  <!-- 右侧目录 -->
+  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css"> 
+  <!-- 目录折叠的图标 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> 
+  <!-- 顶部导航栏 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/LIGMATV/docsify-navbar-fixed/navbar-fixed.css">
 </head>
 <body>
   <div id="app"></div>
@@ -19,6 +25,7 @@
       name: 'CUHKSZ',
       repo: '',
       loadSidebar: true,
+      loadNavbar: true,
       subMaxLevel: 2,
       //搜索
       search: {
@@ -83,6 +90,21 @@
     aside.sidebar ul li a {
       font-size: 17px;
       }
+    .app-nav{
+      height: 45px;
+      background-color: #ffff;
+      color: #000;
+      border-bottom-style: solid;
+      border-color: #E0E0E0;
+    }
+    .app-nav p img:nth-child(1) {
+      width: 50px;
+      margin-top: -7px;
+      float: left;
+    }
+</style>
+</html>
+
     
 </style>
 </html>
